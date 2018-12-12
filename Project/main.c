@@ -174,8 +174,13 @@ void deleteNodeWithSimularity(linkedList* list){
     }
 }
 
-void printInfo(carNode* current){
-
+void printInfo(carNode* current) {
+    printf("%s", current->category);
+    printf("%s", current ->mark);
+    printf("%s", current ->seller);
+    printf("%ld\n", current ->prize);
+    printf("%ld\n", current ->dateOfMade);
+    printf("%s", current ->actualCondition);
 }
 
 void seekNodes(linkedList* list){
