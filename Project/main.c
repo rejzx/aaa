@@ -142,7 +142,17 @@ void deleteNode(linkedList** list, carNode* node){
 }
 
 void deleteNodeWithSimularity(linkedList* list){
+    char znacka[50];
 
+    printf("Zadaj znacku auta: ");
+    scanf("%s",znacka);
+
+    for (carNode* current = list->head; current->next != NULL; current = current->next) {
+        char* markFound = strstr(strlwr(znacka), strlwr(current->mark));
+        if (markFound){
+            deleteNode(&list,current);
+        }
+    }
 }
 
 void printInfo(carNode* current){
