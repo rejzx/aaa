@@ -44,9 +44,20 @@ carNode* fillNode(FILE *pFile){
     return newNode;
 }
 
-carNode* insertedNode(void){
+carNode* insertedNode(){
 
-    return 0;
+
+    carNode* newNode = (carNode*) malloc (sizeof(carNode));
+
+    getchar();
+    fgets (newNode ->category,50,stdin);
+    fgets (newNode ->mark,50,stdin);
+    fgets (newNode ->seller,100,stdin);
+    scanf ("%ld", &newNode ->prize);
+    scanf ("%ld", &newNode ->dateOfMade);
+    getchar();
+    fgets (newNode ->actualCondition,200,stdin);
+    return newNode;
 }
 
 void insertAt(linkedList* list){
