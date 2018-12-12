@@ -33,25 +33,25 @@ void doubled(linkedList* list){
         carNode *newNode;
         int i,pocet_zaznamov = 0;
         while (list->tail->next != NULL) {
-                tail = posledna->dalsi;
+                list->tail = list->tail->next;
                 pocet_zaznamov++;
         }
         for (i=0;i<=pocet_zaznamov;i++){
-                if ((new = (carNode *)malloc(sizeof(carNode))) == NULL) {
+                if ((newNode = (carNode *)malloc(sizeof(carNode))) == NULL) {
                         printf("Zaznamy neboli nacitane");
                         return;
                 }
-                strcpy(newNode->mark,current->znacka);
-                strcpy(newNode->category,current->kateg);
+                strcpy(newNode->mark,current->mark);
+                strcpy(newNode->category,current->category);
                 strcpy(newNode->seller,current->seller);
                 strcpy(newNode->actualCondition,current->actualCondition);
                 newNode->prize=current->prize;
                 newNode->dateOfMade=current->dateOfMade;
 
-                last->next=new;
-                last = posledna->next;
+                list->tail->next=newNode;
+                list->tail = list->tail->next;
                 current = current->next;
-                new->next=NULL;
+                newNode->next=NULL;
         }
 }
 
