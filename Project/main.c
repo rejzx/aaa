@@ -24,7 +24,9 @@ typedef struct linkedList {
 } linkedList;
 
 void init(linkedList** list){
-
+    (*list)-> head = NULL;
+    (*list)-> tail = NULL;
+    (*list)-> size = 0;
 }
 
 void doubled(linkedList* list){
