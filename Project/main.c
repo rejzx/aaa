@@ -202,7 +202,23 @@ void seekNodes(linkedList* list){
 }
 
 void editNode(linkedList* list){
+    char znacka[50];
+    long rok = 0;
+    printf("Zadaj znacku auta: ");
+    scanf("%s", znacka);
+    printf("Zadaj rok: ");
+    scanf("%ld",&rok);
 
+    int count = 0;
+    for (carNode* current = list->head; current->next != NULL; current = current->next) {
+        char* markFound =strstr (strlwr(current->mark), strlwr(znacka));
+        if (markFound && (rok==current->dateOfMade) ){
+            count++;
+            current->prize -= 100 ; if (current->prize<0){current->prize = 0;}
+            printInfo(current);
+        }
+    }
+    if (count > 0) printf("Aktualizovalo sa %d zaznamov",count);
 }
 
 int end(FILE* pFile,linkedList* list){
