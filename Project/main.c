@@ -80,6 +80,19 @@ void fOpen(linkedList* list,FILE* pFile){
 
 void showList(linkedList* list){
 
+    int i = 0;
+    carNode* current = list->head;
+
+    while(current->next != NULL){
+        printf("%d.\n",++i);
+        printf("%s",current->category);
+        printf("%s",current ->mark);
+        printf("%s",current ->seller);
+        printf("%ld\n",current ->prize);
+        printf("%ld\n",current ->dateOfMade);
+        printf("%s",current ->actualCondition);
+        current = current->next;
+    }
 }
 
 void freeClose(linkedList* list){
