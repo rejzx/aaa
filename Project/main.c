@@ -27,6 +27,34 @@ void init(linkedList** list){
 
 }
 
+void doubled(linkedList* list){
+        carNode *current =list->head;
+        carNode *last    =list->head;
+        carNode *newNode;
+        int i,pocet_zaznamov = 0;
+        while (last->next != NULL) {
+                list->tail = list->tail->next;
+                pocet_zaznamov++;
+        }
+        for (i=0;i<=pocet_zaznamov;i++){
+                if ((newNode = (carNode *)malloc(sizeof(carNode))) == NULL) {
+                        printf("List has not been added");
+                        return;
+                }
+                strcpy(newNode->mark,current->mark);
+                strcpy(newNode->category,current->category);
+                strcpy(newNode->seller,current->seller);
+                strcpy(newNode->actualCondition,current->actualCondition);
+                newNode->prize=current->prize;
+                newNode->dateOfMade=current->dateOfMade;
+
+                last->next=newNode;
+                last = last->next;
+                current = current->next;
+                newNode->next = NULL;
+        }
+}
+
 carNode* fillNode(FILE *pFile){
     char a[10];
 
