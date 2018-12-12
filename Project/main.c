@@ -179,7 +179,21 @@ void printInfo(carNode* current){
 }
 
 void seekNodes(linkedList* list){
+    char znacka[50];
+    long price = 0;
+    scanf("%s", znacka);
+    scanf("%ld",&price);
 
+    int count = 0;
+    for (carNode* current = list->head; current->next != NULL; current = current->next) {
+        char* markFound = strstr(strlwr(current->mark), strlwr(znacka));
+        if (markFound && (current->prize <= price) ){
+            count++;
+            printf("%d.\n", count);
+            printInfo(current);
+        }
+    }
+    if (count == 0) printf("V ponuke nie su pozadovane auta.");
 }
 
 void editNode(linkedList* list){
