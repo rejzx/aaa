@@ -28,8 +28,20 @@ void init(linkedList** list){
 }
 
 carNode* fillNode(FILE *pFile){
+    char a[10];
 
-    return 0;
+    carNode* newNode = (carNode*) malloc (sizeof(carNode));
+
+    fgets (a, 10, pFile);                                               // printf("%s",a);
+    fgets (newNode ->category, 50, pFile);                   // printf("%s",newNode->category);
+    fgets (newNode ->mark, 50, pFile);                        // printf("%s",newNode ->mark);
+    fgets (newNode ->seller, 100, pFile);                      // printf("%s",newNode ->seller);
+    fscanf (pFile, "%ld", &newNode ->prize);                // printf("%ld\n",newNode ->prize);
+    fscanf (pFile, "%ld", &newNode ->dateOfMade);      // printf("%ld\n",newNode ->dateOfMade);
+    fgets (a, 10, pFile);                                               // printf("%s",a);
+    fgets (newNode ->actualCondition, 200, pFile);        // printf("%s",newNode ->actualCondition);
+
+    return newNode;
 }
 
 carNode* insertedNode(void){
