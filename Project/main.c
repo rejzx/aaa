@@ -50,6 +50,33 @@ carNode* insertedNode(void){
 }
 
 void insertAt(linkedList* list){
+    int pos;
+    scanf("%d",&pos);
+    if(pos<1){printf("Invalid position"); return;}
+    else if(pos>list->size){
+        printf("Zaznam bude pridany na koniec zoznamu");
+        carNode* newNode = insertedNode();
+        list->tail->next = newNode;
+        newNode->next = NULL;
+        list->tail = newNode;
+        return;
+    }
+
+    printf("Insert new car\n");
+    carNode* newNode = insertedNode();
+
+    if ((list)->head == NULL){
+        (list)->head = newNode;
+        (list)->tail = newNode;
+    }
+
+    carNode* current = list->head ;
+    for(int i = 1;i < pos-1; i++){
+        current = current->next;
+    }
+    newNode ->next = current->next;
+    current -> next = newNode;
+
 
 }
 
