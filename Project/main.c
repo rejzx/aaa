@@ -134,7 +134,15 @@ void showList(linkedList* list){
 }
 
 void freeClose(linkedList* list){
-
+    carNode* current = list->head;
+    carNode* prev = list->head;
+    while (current != NULL) {
+        prev = current;
+        free(prev);
+        current = current->next;
+    }
+    list->head = NULL;
+    list->tail = NULL;
 }
 
 void deleteNode(linkedList** list, carNode* node) {
