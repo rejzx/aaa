@@ -137,12 +137,41 @@ void freeClose(linkedList* list){
 
 }
 
-void deleteNode(linkedList** list, carNode* node){
+void deleteNode(linkedList** list, carNode* node) {
+    if ((*list)->head == node) { //deleting head
+        carNode *oldHead = (*list)->head;
+        (*list)->head = (*list)->head->next;
+        free(oldHead);
+        return;
+    }
+    // deleting ordinary node
+    carNode* prev = (*list)->head;
+    carNode* current = (*list)->head;
+    while (current != node && current != NULL) {
+        prev = current;
+        current = current->next; // move one node before the node which has to be deleted
+    }
 
+    if (current == (*list)->tail) {
+        (*list)->tail = prev;
+    }
+    (*list)->size -= 1;
+    prev->next = current->next;
+    free(current);
 }
 
 void deleteNodeWithSimularity(linkedList* list){
+    char znacka[50];
 
+    printf("Zadaj znacku auta: ");
+    scanf("%s",znacka);
+
+    for (carNode* current = list->head; current->next != NULL; current = current->next) {
+        char* markFound = strstr(strlwr(znacka), strlwr(current->mark));
+        if (markFound){
+            deleteNode(&list,current);
+        }
+    }
 }
 
 void printInfo(carNode* current){
