@@ -222,7 +222,9 @@ void editNode(linkedList* list){
 }
 
 int end(FILE* pFile,linkedList* list){
-
+    freeClose(list);
+    fclose(pFile);
+    return 0;
 }
 
 int main(){
