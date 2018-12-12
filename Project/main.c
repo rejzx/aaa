@@ -23,31 +23,59 @@ typedef struct linkedList {
 
 } linkedList;
 
-void init(){}
+void init(linkedList** list){
 
-carNode* fillNode(){return 0;}
+}
 
-carNode* insertedNode(){return 0;}
+carNode* fillNode(FILE *pFile){
 
-void insertAt(){}
+    return 0;
+}
 
-void n(){}
+carNode* insertedNode(void){
 
-void v(){}
+    return 0;
+}
 
-void fC(){}
+void insertAt(linkedList* list){
 
-void zN(){}
+}
 
-void z(){}
+void fOpen(linkedList* list,FILE* pFile){
 
-void p(){}
+}
 
-void h(){}
+void showList(linkedList* list){
 
-void a(){}
+}
 
-int k(){}
+void freeClose(linkedList* list){
+
+}
+
+void deleteNode(linkedList** list, carNode* node){
+
+}
+
+void deleteNodeWithSimularity(linkedList* list){
+
+}
+
+void printInfo(carNode* current){
+
+}
+
+void seekNodes(linkedList* list){
+
+}
+
+void editNode(linkedList* list){
+
+}
+
+int end(FILE* pFile,linkedList* list){
+
+}
 
 int main(){
     FILE *pFile = NULL ;
@@ -59,34 +87,34 @@ int main(){
         switch(q)
         {
         case 'n':
-            n();
+            fOpen(&list,pFile);
             break;
 
         case 'v':
-            v();
+            showList(&list);
             break;
 
         case 'p':
-            p();
+            insertAt(&list);
             break;
 
         case 'z':
-            z();
+            deleteNodeWithSimularity(&list);
             break;
 
         case 'h':
-            h();
+            seekNodes(&list);
             break;
 
         case 'a':
-            a();
+            editNode(&list);
             break;
 
 
         }
 
     }
-    k();
+    end(pFile,&list);
     return 0;
 }
 
