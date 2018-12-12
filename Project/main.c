@@ -43,6 +43,27 @@ void insertAt(linkedList* list){
 
 void fOpen(linkedList* list,FILE* pFile){
 
+    int numEntries =0;
+    char riadok[200];
+    pFile = fopen("C:\\Users\\Richard Gehrer\\Desktop\\Richard_Gehrer_Projekt_2\\auta.txt", "r");
+    if(!pFile){printf("Zaznamy neboli nacitane"); return;}
+    init(&list);
+
+    while(fgets(riadok,200,pFile)){
+        if (riadok[0]=='$'){ numEntries++;}
+    }
+    rewind(pFile);
+    printf("Nacitalo/i sa %d zaznamov\n",numEntries);
+    list->size = numEntries ;
+
+
+    list->head = fillNode(pFile);
+    carNode *current = list->head;
+    for (int i = 1;i < numEntries; i++){
+        current->next = fillNode(pFile);
+        current = current->next;
+    }
+    list->tail = current;
 }
 
 void showList(linkedList* list){
