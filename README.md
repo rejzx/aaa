@@ -14,7 +14,9 @@ mip-st-11-hlavac-par-rejzx created by GitHub Classroom
 11.Function insertedNode added to help and refactor function insertAt 
 12.Function insertedNode merged into function insertAt
 13.Function insertAt has been merge pulled into master
+
 14.Function deleteNodeWithWimularity has been structured and refactored
+
 15.Function deleteDone added to help function deleteodeWithSimularity
 16.Function deleteNodeWithSimularity has been merged into deleteNode
 17.Function deleteNode has beeem merge puleld into master
