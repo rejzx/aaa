@@ -1,6 +1,9 @@
 # mip-st-11-hlavac-par-rejzx
 mip-st-11-hlavac-par-rejzx created by GitHub Classroom
 
+This program is aim for work with database of Cars and thei attributes
+It has been made in additional oreder
+
 1. Function Main created
 2. All functions has been declared
 3. Functions has been renamed
