@@ -2,16 +2,25 @@
 mip-st-11-hlavac-par-rejzx created by GitHub Classroom
 
 This program is aim for work with database of Cars and thei attributes
+
 It has been made in additional oreder
 
 1. Function Main created
+
 2. All functions has been declared
+
 3. Functions has been renamed
+
 4. Function fOpen has been structured and refactored
+
 5. Function fOpen merge pulled into master
+
 6. Function fillNode added as refactoring/helping fucntion
+
 7. Function fillNode merge pulled into master
+
 8. Function showList has been structured and refactored
+
 9. Fucntion showList has been merge pulled into master
 
 10.Function insertAt has been structured and refactored
