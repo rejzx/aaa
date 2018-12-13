@@ -1,4 +1,4 @@
-# mip-st-11-hlavac-par-rejzx
+# Car Database .exe
 mip-st-11-hlavac-par-rejzx created by GitHub Classroom
 
 This program is aimed for work with database of Cars and their attributes
